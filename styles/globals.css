@@ -1,0 +1,109 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Bruno+Ace+SC&display=swap");
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.main {
+  width: 100vw;
+  min-height: 100vh;
+  position: fixed;
+  display: flex;
+  justify-content: center;
+  padding: 7.5rem 1.5rem 10rem 1.5rem;
+  z-index: -1;
+}
+
+.main::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-image: radial-gradient(
+    circle,
+    rgba(2, 0, 36, 0.25) 0,
+    #fafafa 100%
+  );
+}
+
+.main::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-image: url("/assets/images/grid.svg");
+  filter: invert(1);
+  opacity: 0.4;
+}
+
+.gradient {
+  position: absolute;
+  inset: 0;
+  background-image: radial-gradient(
+      at 97% 21%,
+      hsla(125, 98%, 72%, 1) 0px,
+      transparent 50%
+    ),
+    radial-gradient(at 52% 99%, hsla(354, 98%, 61%, 1) 0px, transparent 50%),
+    radial-gradient(at 10% 29%, hsla(256, 96%, 67%, 1) 0px, transparent 50%),
+    radial-gradient(at 97% 96%, hsla(38, 60%, 74%, 1) 0px, transparent 50%),
+    radial-gradient(at 33% 50%, hsla(222, 67%, 73%, 1) 0px, transparent 50%),
+    radial-gradient(at 79% 53%, hsla(343, 68%, 79%, 1) 0px, transparent 50%);
+  filter: blur(100px) saturate(150%);
+  opacity: 0.15;
+}
+
+.logo_text {
+  display: none;
+  font-size: 1.5rem;
+  letter-spacing: 2px;
+  font-weight: 700;
+  /* text-shadow: 0 0 3px #080101, 0 0 5px #0000ff; */
+}
+
+@media (min-width: 768px) {
+  .logo_text {
+    display: block;
+  }
+}
+
+.btn_primary {
+  @apply rounded-full border border-primary bg-primary py-1.5 px-5 text-black font-bold transition-all hover:bg-transparent hover:text-black text-center text-sm flex items-center justify-center;
+}
+
+.btn_outline_primary {
+  @apply rounded-full border border-primary bg-transparent py-1.5 px-5 text-black  font-bold transition-all hover:bg-primary hover:text-white text-center text-sm flex items-center justify-center;
+}
+
+.main_content {
+  @apply ml-0 lg:ml-20 2xl:ml-80 transition-all;
+}
+
+.section_heading {
+  @apply text-primary text-2xl font-Bruno font-bold mb-5;
+}
+
+.broker_list {
+  display: grid;
+  grid-template-columns: repeat(4, 7rem) 5rem 5rem 1fr 3rem;
+  /* place-items: center; */
+  align-items: center;
+  border: 1px solid gray;
+  padding: 0.5rem;
+}
+
+.order_list {
+  display: grid;
+  grid-template-columns: 3fr 50px 200px 30px 30px;
+  align-items: center;
+  gap: 0.75rem;
+  border-bottom: 1px solid black;
+}
+
+.position_list {
+  display: grid;
+  grid-template-columns: 2fr 30px 150px 60px 100px 150px 30px;
+  align-items: center;
+  gap: 0.75rem;
+  padding-inline: 0.5rem;
+  border-bottom: 1px solid black;
+}
