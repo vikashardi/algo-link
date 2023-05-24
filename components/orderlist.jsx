@@ -123,7 +123,7 @@ function OrderItem({ order }) {
 
 export default function Orderlist({ orders }) {
   return (
-    <div style={{ border: "1px solid gray" }}>
+    <div className="overflow-x-scroll" style={{ border: "1px solid gray" }}>
       <ul>
         <li className="order_list bg-primary px-2" key="heading">
           <span>Symbol</span>

@@ -7,7 +7,7 @@ const Watchlist = () => {
   const [orderType, setOrderType] = useState("LMT");
   return (
     <>
-      <div className="flex items-center gap-4 my-2 ">
+      <div className="flex items-center gap-4 my-2">
         <label htmlFor="lot">Lot :</label>
         <select
           className="bg-gray-50 border border-gray-300 p-1 rounded-lg"
@@ -32,7 +32,7 @@ const Watchlist = () => {
           <option value="SL-LMT">Stop</option>
         </select>
       </div>
-      <div className="flex justify-between gap-8 md:gap-2 my-4 p-1">
+      <div className="flex flex-col sm:flex-row justify-between gap-8 md:gap-2 my-4 p-1">
         {symbols.map(
           (sym) =>
             sym && (
@@ -135,11 +135,12 @@ function ListItem({ symbol, lotsize, orderType }) {
           />
         )}
         <button
+          disabled
           className="text-xs px-8 bg-red-600 rounded-lg text-white font-bold"
-          onClick={(e) => {
-            e.preventDefault();
-            handleOrder("S");
-          }}
+          // onClick={(e) => {
+          //   e.preventDefault();
+          //   handleOrder("S");
+          // }}
         >
           S
         </button>

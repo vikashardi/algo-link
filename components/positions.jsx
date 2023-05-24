@@ -108,8 +108,8 @@ function PositonItem({ position }) {
 
   return (
     <li className="position_list">
-      <span>{position.tsym}</span>
-      <span className="text-right">{position.netqty}</span>
+      <span>{position.tsym.slice(-6)}</span>
+      <span className="text-right hidden md:block">{position.netqty}</span>
       <div className="flex items-center justify-center">
         {editMode && (
           <div className="fixed grid place-content-center inset-0 bg-black bg-opacity-5 z-50">
@@ -344,11 +344,11 @@ function PositonItem({ position }) {
 
 export default function Positions({ positions }) {
   return (
-    <div style={{ border: "1px solid gray" }}>
+    <div className="overflow-x-scroll" style={{ border: "1px solid gray" }}>
       <ul className="">
         <li className="position_list bg-primary" key="headeing">
           <span>Symbol</span>
-          <span className="text-right">Qty</span>
+          <span className="text-right hidden md:block">Qty</span>
           <span className="text-center">SL Button</span>
           <span className="text-right">LTP</span>
           <span className="text-right">P&L</span>

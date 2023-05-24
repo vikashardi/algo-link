@@ -157,27 +157,96 @@ const Broker = ({ broker, selectBroker }) => {
       <div className="flex gap-2">
         {isTokenValid ? (
           <>
-            {broker.primary && <Link href="/trade">Open Pannel</Link>}
-            <button type="button" onClick={() => selectBroker(broker, "order")}>
-              Orders
+            {broker.primary && (
+              <Link
+                href="/trade"
+                className="border border-gray-600 bg-gray-50 p-1 rounded-full"
+              >
+                <Image
+                  src="/assets/icons/ext-link.svg"
+                  width={20}
+                  height={20}
+                  alt="cb"
+                />
+              </Link>
+            )}
+            {broker.broker_name == "finvasia" && (
+              <Link
+                href={{ pathname: "/finvasia", query: { id: broker._id } }}
+                className="border border-gray-600 bg-gray-50 p-1 rounded-full"
+              >
+                <Image
+                  src="/assets/icons/link.svg"
+                  width={20}
+                  height={20}
+                  alt="cb"
+                />
+              </Link>
+            )}
+            {broker.broker_name == "flattrade" && (
+              <Link
+                href={`https://auth.flattrade.in/?app_key=${broker.key}`}
+                className="border border-gray-600 bg-gray-50 p-1 rounded-full"
+              >
+                <Image
+                  src="/assets/icons/link.svg"
+                  width={20}
+                  height={20}
+                  alt="cb"
+                />
+              </Link>
+            )}
+            <button
+              type="button"
+              onClick={() => selectBroker(broker, "order")}
+              className="border border-gray-600 bg-gray-50 p-1 rounded-full"
+            >
+              <Image
+                src="/assets/icons/book.svg"
+                width={20}
+                height={20}
+                alt="cb"
+              />
             </button>
             <button
               type="button"
+              className="border border-gray-600 bg-gray-50 p-1 rounded-full"
               onClick={() => selectBroker(broker, "position")}
             >
-              Positions
+              <Image
+                src="/assets/icons/book.svg"
+                width={20}
+                height={20}
+                alt="cb"
+              />
             </button>
           </>
         ) : (
           <>
             {broker.broker_name == "finvasia" && (
-              <Link href={{ pathname: "/finvasia", query: { id: broker._id } }}>
-                Get Token
+              <Link
+                href={{ pathname: "/finvasia", query: { id: broker._id } }}
+                className="border border-gray-600 bg-gray-50 p-1 rounded-full"
+              >
+                <Image
+                  src="/assets/icons/link.svg"
+                  width={20}
+                  height={20}
+                  alt="cb"
+                />
               </Link>
             )}
             {broker.broker_name == "flattrade" && (
-              <Link href={`https://auth.flattrade.in/?app_key=${broker.key}`}>
-                Get Token
+              <Link
+                href={`https://auth.flattrade.in/?app_key=${broker.key}`}
+                className="border border-gray-600 bg-gray-50 p-1 rounded-full"
+              >
+                <Image
+                  src="/assets/icons/link.svg"
+                  width={20}
+                  height={20}
+                  alt="cb"
+                />
               </Link>
             )}
           </>
