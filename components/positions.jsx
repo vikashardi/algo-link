@@ -113,8 +113,8 @@ function PositonItem({ position }) {
       <div className="flex items-center justify-center">
         {editMode && (
           <div className="fixed grid place-content-center inset-0 bg-black bg-opacity-5 z-50">
-            <div className="bg-white w-96 h-64">
-              <div className=" relative px-3 py-1 bg-secondary-dark">
+            <div className="bg-white w-full">
+              <div className="relative px-3 py-1 bg-secondary-dark">
                 Place SL
                 <Image
                   className="absolute right-2 top-2 cursor-pointer"
@@ -151,14 +151,18 @@ function PositonItem({ position }) {
                   </div>
                   <div>
                     <label
-                      className="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
+                      className="block mb-2 text-xs font-medium text-gray-900 dark:text-white"
                       htmlFor="sl"
                     >
-                      Enter Stoploss
+                      Enter SL (LTP :{" "}
+                      <span className="text-blue-500 text-lg font-semibold">
+                        {position.lp}
+                      </span>
+                      )
                     </label>
                     <input
                       disabled={!cb1}
-                      className="bg-gray-50 border border-gray-300 text-gray-900 text-lg rounded-lg  block w-full p-2.5 focus:ring-blue-500 focus:border-primary dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+                      className="bg-gray-50 border border-gray-300 text-gray-900 text-md text-center rounded-lg  block w-full p-1 focus:ring-blue-500 focus:border-primary dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
                       type="number"
                       id="sl"
                       value={inp1}
@@ -199,7 +203,7 @@ function PositonItem({ position }) {
                       Enter Stoploss
                     </label>
                     <input
-                      className="bg-gray-50 border border-gray-300 text-gray-900 text-lg rounded-lg  block w-full p-2.5 focus:ring-blue-500 focus:border-primary dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+                      className="bg-gray-50 border border-gray-300 text-gray-900 text-md rounded-lg text-center  block w-full p-1 focus:ring-blue-500 focus:border-primary dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
                       disabled={!cb2}
                       type="number"
                       id="tsl"
